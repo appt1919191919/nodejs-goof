@@ -11,3 +11,9 @@ jobs:
       - run: id
       - run: uname -a
       - run: env
+  owasp_ZAP:
+    runs-on: ubuntu-latest
+  - name: ZAP Scan
+    uses: zaproxy/action-baseline@v0.7.0
+    with:
+      target: 'https://juice-shop.herokuapp.com'
