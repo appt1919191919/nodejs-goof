@@ -5,7 +5,7 @@ on: push
 jobs:
   appsecil:
     runs-on: ubuntu-latest
-    name: Hello World:
+      name: Hello World:
     steps:
       - run: echo "Hello AppSecIL 2023"
       - run: id
