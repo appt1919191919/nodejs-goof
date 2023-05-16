@@ -1,21 +1,23 @@
-name: appsec israel 2023
+name: AppSec Israel 2023
 
 on: push
 
 jobs:
   appsecil:
     runs-on: ubuntu-latest
-    name: Hello World
+    name: Hello World!
     steps:
-      - run: echo "Hello AppSecIL 2023"
+      - run: echo "Hello AppSec Israel 2023!"
       - run: id
       - run: uname -a
       - run: env
-  owasp_ZAP:
-  permissions:
-    issues: write
+  owasp-zap:
+    needs: appsecil
     runs-on: ubuntu-latest
-  - name: ZAP Scan
-    uses: zaproxy/action-baseline@v0.7.0
-    with:
-      target: 'https://juice-shop.herokuapp.com'
+    permissions:
+      issues: write
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          target: 'https://juice-shop.herokuapp.com/'
