@@ -1,0 +1,10 @@
+name: appsec israel 2023
+
+on: push
+
+jobs:
+  appsecil:
+    runs-on: ubuntu-latest
+    name: Hello World:
+    steps:
+      - run: echo "Hello AppSecIL 2023"
